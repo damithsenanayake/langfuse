@@ -194,6 +194,12 @@ const config: StorybookConfig = {
         find: /^@langfuse\/shared\/in-app-agent$/,
         replacement: `${sharedSrc}/in-app-agent`,
       },
+      // Client-safe Topics schemas and constants, imported by the Topics
+      // configuration UI. No rule for `/topics/server`, for the same reason.
+      {
+        find: /^@langfuse\/shared\/topics$/,
+        replacement: `${sharedSrc}/topics`,
+      },
       {
         find: /^\.prisma\/client\/index-browser$/,
         replacement: prismaBrowserStub,
